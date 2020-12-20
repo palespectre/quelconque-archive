@@ -9,6 +9,7 @@ dh_require_multiple(dirname(__FILE__), [
 	'hooks-reset.php',
 	'hooks-setup.php',
 	'hooks-roles.php',
+	'hooks-quelconque_archive.php',
 	'hooks-wp_enqueue_scripts.php',
 	'hooks-advanced-structure.php',
 	['hooks-mode-dev.php', MODE_DEV],

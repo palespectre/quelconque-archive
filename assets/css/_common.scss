@@ -1,0 +1,21 @@
+body {
+    #page {
+        & > #content {
+            padding-top: 2rem;
+        }
+
+        & > .page-header {
+            display: none;
+        }
+    }
+
+    &.woocommerce-checkout {
+        #main {
+            article {
+                & > .entry-content {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, './public/wp-content/themes/boilerplate_theme/assets') // remplacer "boilerplate_theme" par le thème actuel
+    path: path.resolve(__dirname, './public/wp-content/themes/quelconque_archive/assets') // remplacer "boilerplate_theme" par le thème actuel
   },
   module: {
     rules: [
@@ -63,11 +63,11 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: './assets/img/dist',
-        to: path.resolve(__dirname, './public/wp-content/themes/boilerplate_theme/assets/img') // remplacer "boilerplate_theme" par le thème actuel
+        to: path.resolve(__dirname, './public/wp-content/themes/quelconque_archive/assets/img') // remplacer "boilerplate_theme" par le thème actuel
       },
       {
         from: './assets/fonts',
-        to: path.resolve(__dirname, './public/wp-content/themes/boilerplate_theme/assets/fonts') // remplacer "boilerplate_theme" par le thème actuel
+        to: path.resolve(__dirname, './public/wp-content/themes/quelconque_archive/assets/fonts') // remplacer "boilerplate_theme" par le thème actuel
       }
     ]),  
     new ImageminPlugin({

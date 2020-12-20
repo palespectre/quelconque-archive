@@ -8,11 +8,11 @@ module.exports = {
     },
     'cssnano': {},    
 	'postcss-critical-css': {
-		outputPath: path.resolve(__dirname, './public/wp-content/themes/boilerplate_theme/assets/css'),
+		outputPath: path.resolve(__dirname, './public/wp-content/themes/quelconque_archive/assets/css'),
 	},
     'postcss-extract-media-query':{
 	    output: {
-	        path: path.resolve(__dirname, './public/wp-content/themes/boilerplate_theme/assets/css'), // remplacer "boilerplate_theme" par le thème actuel
+	        path: path.resolve(__dirname, './public/wp-content/themes/quelconque_archive/assets/css'), // remplacer "boilerplate_theme" par le thème actuel
 	        name: '[query].css'
 	    },	    
 	    queries: {

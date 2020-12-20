@@ -1,46 +1,13 @@
-header#header{
-	position: relative;
-	
-	#menu-menu-supheader, #mainnav  {
+#content.site-content {
+	.page-header {
 		display: none;
 	}
 }
-
 @media only screen and (min-width:36em){
 
 }
 @media only screen and (min-width:48em){
-	header#header{
-		padding: 0 10%;
 
-		#menu-menu-supheader, #mainnav  {
-			display: flex;
-			justify-content: flex-end;
-			width: 100%;
-			padding-left: 0;
-			list-style: none;
-
-			li {
-				a {
-					text-decoration: none;
-					color: black;
-					padding: 0.5rem;
-					font-size: 1.1rem;
-				}
-			}
-		}
-	
-		.container-fluid {
-			nav {
-				display: flex;
-				align-items: center;
-	
-				#open-mobile-menu {
-					display: none;
-				}
-			}
-		}
-	}
 }
 @media only screen and (min-width:64em){
 

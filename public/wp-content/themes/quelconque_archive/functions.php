@@ -12,3 +12,5 @@ require_once dirname(__FILE__).'/inc/ajax/_ajax.php';
 require_once dirname(__FILE__).'/inc/widgets/_widgets.php';
 require_once dirname(__FILE__).'/inc/shortcodes/_shortcodes.php';
 require_once dirname(__FILE__).'/inc/settings/_settings.php';
+
+
