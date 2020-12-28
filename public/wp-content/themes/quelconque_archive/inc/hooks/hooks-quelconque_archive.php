@@ -23,3 +23,6 @@ function woocommerce_template_loop_stock() {
 // function woocommerce_filters() {
 //     echo do_shortcode('[br_filter_single filter_id=76]');
 // }
+
+// remove related products
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

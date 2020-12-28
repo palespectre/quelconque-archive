@@ -25,28 +25,6 @@ body {
     font-weight: bold;
 }
 
-// filters
-.select2-container--default, .select2-container--classic {
-    .select2-selection--multiple {
-        .select2-selection__choice {
-            background-color: black;
-            color: white;
-            font-size: 1rem;
-            padding: 5px !important;
-            margin: 5px 5px 5px 0 !important;
-        }
-    }
-}
-
-.select2-container--classic .select2-results__option[aria-disabled=true]{color:grey}
-.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:black;color:#fff}
-.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px}
-.select2-container--classic.select2-container--open .select2-dropdown{border-color:black}
-.select2-container--classic .select2-selection--single:focus{border:1px solid black}
-.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid black}
-.select2-container--classic .select2-selection--multiple:focus{border:1px solid black}
-.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid black}
-
 @media only screen and (min-width:36em){
 
 }

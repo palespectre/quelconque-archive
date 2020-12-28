@@ -13,4 +13,4 @@ images.forEach(img => {
         scroll.update();
         console.log('update');
     }
-})
+});
