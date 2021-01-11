@@ -25,6 +25,5 @@
 <?php do_action( 'leto_after_page' ); ?>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

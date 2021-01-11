@@ -15,14 +15,14 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 // Remove default Sitemap
 
-  if(is_plugin_active('wp-seopress')){
+  // if(is_plugin_active('wp-seopress')){
 
-    add_filter( 'wp_sitemaps_enabled', '__return_false' );
-    add_action( 'init', function() {
-      remove_action( 'init', 'wp_sitemaps_get_server' );
-    }, 5 );
+  //   add_filter( 'wp_sitemaps_enabled', '__return_false' );
+  //   add_action( 'init', function() {
+  //     remove_action( 'init', 'wp_sitemaps_get_server' );
+  //   }, 5 );
 
-  }
+  // }
 
 
 // -----------------------------------------------------------------------------
