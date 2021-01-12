@@ -3,7 +3,7 @@
 // stock message
 add_filter('woocommerce_get_stock_html', 'change_stock_message', 10, 2);
 function change_stock_message($message, $stock_status) {
-    if ($stock_status == "Out of stock") {
+    if ($stock_status->get_stock_status() == "outofstock") {
         $message = '<p class="stock out-of-stock">Sold</p>';    
     }
     return $message;
@@ -54,3 +54,10 @@ function default_no_quantities( $individually, $product ){
     $individually = true;
     return $individually;
 }
+
+// disable lazy load
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
+// disable meta categories
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
