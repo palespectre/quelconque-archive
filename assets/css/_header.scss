@@ -1,3 +1,9 @@
+header#masthead {
+	.nav-link-account, .nav-link-search {
+		display: none;
+	}
+}
+
 #content.site-content {
 	.page-header {
 		display: none;

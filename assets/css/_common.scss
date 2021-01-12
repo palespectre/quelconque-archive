@@ -10,6 +10,10 @@ body {
     }
 
     &.woocommerce-checkout {
+        .page-header {
+            display: none;
+        }
+
         #main {
             article {
                 & > .entry-content {
@@ -18,12 +22,35 @@ body {
             }
         }
     }
+
+    &.woocommerce-cart {
+        .page-header {
+            display: none;
+        }
+    }
 }
 
 .is-out-of-stock {
     color:red;
     font-weight: bold;
 }
+
+.woocommerce-notices-wrapper .woocommerce-message {
+    background-color: black;
+    color: white;
+}
+
+.wc-proceed-to-checkout a.button.checkout-button, .woocommerce-checkout #payment .form-row.place-order button.button, .woocommerce div.product form.cart button.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: unset;
+    width: auto;
+    padding: 1rem 5rem;
+    font-size: 1.5rem;
+}
+
+.pswp {}
 
 @media only screen and (min-width:36em){
 
@@ -39,7 +66,39 @@ body {
     }
 }
 @media only screen and (min-width:64em){
+    body.woocommerce-cart {
+        .shop_table {
+            .product-thumbnail {
+                img {
+                    max-height: 6rem;
+                    width: auto;
+                }
+            }
 
+            .product-name {
+                a {
+                    color: black;
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    body.woocommerce-checkout {
+        .woocommerce-billing-fields__field-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            
+            & > p.form-row {
+                width: 48%;
+                margin: 0.5rem;
+            }
+        }
+    }
 }
 @media only screen and (min-width:80em){
 
