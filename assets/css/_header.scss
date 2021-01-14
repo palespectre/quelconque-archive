@@ -1,12 +1,45 @@
 header#masthead {
-	.nav-link-account, .nav-link-search {
+	.nav-link-account, .nav-link-search, .site-branding__content {
 		display: none;
+	}
+
+	.site-header__content {
+		.site-branding {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 	}
 }
 
 #content.site-content {
 	.page-header {
 		display: none;
+	}
+}
+
+.nav-link-cart {
+	padding: 0 40px;
+	margin: 0;
+
+	.sub-menu.cart-mini-wrapper {
+		box-shadow: 0px 2px 20px 0px #00000017;
+		top: 80%;
+
+		.woocommerce-Price-amount {
+			color: black;
+			font-weight: bold;
+		}
+
+		.woocommerce-mini-cart__total.total {
+			text-transform: initial;
+		}
+
+		p.buttons {
+			a {
+				text-transform: inherit;
+			}
+		}
 	}
 }
 @media only screen and (min-width:36em){
