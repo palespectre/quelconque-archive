@@ -61,3 +61,8 @@ add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 // disable meta categories
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+// remove wysiwyg
+add_action( 'init', 'remove_product_editor' );
+function remove_product_editor() {
+	remove_post_type_support( 'product', 'editor' );
+}
