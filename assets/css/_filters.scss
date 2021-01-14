@@ -1,4 +1,3 @@
-// filters
 .select2-container--default, .select2-container--classic {
     .select2-selection--multiple {
         .select2-selection__choice {
@@ -19,6 +18,9 @@
 }
 
 aside#secondary {
+    background-color: white;
+    padding-left: 0;
+
     h3 {
         font-size: 1.3rem;
     }
@@ -26,8 +28,12 @@ aside#secondary {
     .bapf_ckbox {
         ul {
             padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
 
             li {
+                margin-left: 1rem !important;
+
                 input {
                     margin-top: 0;
                     width: 10px;
@@ -68,4 +74,28 @@ aside#secondary {
 }
 .select2-container--classic .select2-results__option--highlighted[aria-selected=true]:after {
     color: white;
+}
+
+
+@media only screen and (min-width:36em){
+    aside#secondary {
+        .bapf_ckbox {
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:48em){
+
+}
+@media only screen and (min-width:64em){
+
+}
+@media only screen and (min-width:80em){
+
 }

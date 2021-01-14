@@ -50,7 +50,9 @@ body {
     font-size: 1.5rem;
 }
 
-.pswp {}
+body.woocommerce-checkout .woocommerce form .form-row .required {
+    color: black;
+}
 
 @media only screen and (min-width:36em){
 

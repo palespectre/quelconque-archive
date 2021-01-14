@@ -39,6 +39,9 @@
                     <div class="container-full">
                         <div class="site-header__content">			
                         <?php do_action( 'leto_inside_header' ); ?>
+                        <a href="/?wmc-currency=EUR">EUR</a>
+                        <a href="/?wmc-currency=USD">USD</a>
+                        <a href="/?wmc-currency=GBP">GBP</a>
                         </div>
                     </div>
                 </div>
