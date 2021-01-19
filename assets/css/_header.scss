@@ -1,13 +1,20 @@
 header#masthead {
+	background-color: white;
+
 	.nav-link-account, .nav-link-search, .site-branding__content {
 		display: none;
 	}
 
 	.site-header__content {
 		.site-branding {
-			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+	}
+	
+	.nav-link-right {
+		& > li, & > li:nth-child(2) {
+			margin: 0 0.5rem;
 		}
 	}
 }

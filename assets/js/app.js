@@ -1,10 +1,27 @@
 import css from '../css/app.scss';
 import LocomotiveScroll from 'locomotive-scroll';
 
+const header = document.querySelector('header#masthead');
+
+// show/hide header on scroll
+export const showMenu = (event) => {
+    if (event.direction === 'down') {
+        header.classList.remove('show-menu');
+        header.classList.add('hide-menu');
+    } else {
+        header.classList.remove('hide-menu');
+        header.classList.add('show-menu');
+    }
+}
 // init locomotive-scroll
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
+    getDirection: true
+});
+
+scroll.on('scroll', event => {
+    showMenu(event);
 });
 
 // update locomotive-scroll once all images are loaded

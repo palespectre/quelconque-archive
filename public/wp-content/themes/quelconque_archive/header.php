@@ -33,15 +33,12 @@
 
         <?php do_action( 'leto_before_header' ); ?>
 
-        <header id="masthead" class="site-header">
+        <header data-scroll data-scroll-sticky data-scroll-target="#content" id="masthead" class="site-header">
             <div class="header-floating-trigger">
                 <div class="header-navigation header-floating">
                     <div class="container-full">
-                        <div class="site-header__content">			
+                        <div class="site-header__content">
                         <?php do_action( 'leto_inside_header' ); ?>
-                        <a href="/?wmc-currency=EUR">EUR</a>
-                        <a href="/?wmc-currency=USD">USD</a>
-                        <a href="/?wmc-currency=GBP">GBP</a>
                         </div>
                     </div>
                 </div>
@@ -52,7 +49,7 @@
 
         <?php $container = leto_container_type(); ?>
         <div id="content" class="site-content">
-            <?php do_action( 'leto_before_container' ); ?>		
+            <?php do_action( 'leto_before_container' ); ?>
             <div class="<?php echo esc_attr( $container ); ?> clearfix">
                 <div class="row">
 
