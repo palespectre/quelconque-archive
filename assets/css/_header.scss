@@ -1,5 +1,6 @@
 header#masthead {
 	background-color: white;
+	z-index: 1;
 
 	.nav-link-account, .nav-link-search, .site-branding__content {
 		display: none;
@@ -7,6 +8,7 @@ header#masthead {
 
 	.site-header__content {
 		.site-branding {
+			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
 		}
@@ -46,6 +48,11 @@ header#masthead {
 			a {
 				text-transform: inherit;
 			}
+		}
+
+		.button.checkout.wc-forward:hover {
+			color: white !important;
+			background-color: black;
 		}
 	}
 }

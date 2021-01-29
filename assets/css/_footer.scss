@@ -1,5 +1,7 @@
 footer.site-footer {
     padding-bottom: 30px;
+    position: relative;
+    z-index: 0;
 
     .site-info {
         display: none;
