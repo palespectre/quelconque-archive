@@ -21,6 +21,10 @@ aside#secondary {
     background-color: white;
     padding-left: 0;
 
+    .berocket_single_filter_widget {
+        cursor: pointer;
+    }
+    
     h3 {
         font-size: 1.3rem;
     }
