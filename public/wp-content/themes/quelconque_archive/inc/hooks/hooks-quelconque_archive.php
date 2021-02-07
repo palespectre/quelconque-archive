@@ -55,6 +55,27 @@ function default_no_quantities( $individually, $product ){
     return $individually;
 }
 
+// manage stock to 1 by default
+add_action( 'admin_footer', 'new_product_stock_default_setting' );
+function new_product_stock_default_setting() {
+    global $pagenow, $post_type;
+
+    // Targeting new product page (admin)
+    if( $pagenow === 'post-new.php' && $post_type === 'product' ) :
+    ?>
+    <script>
+    jQuery(function($){
+        var a = '#inventory_product_data input#';
+
+        // Set Manage Stock and trigger event to show other related fields
+        $(a+'_manage_stock').prop('checked', true).change();
+        $(a+'_stock').val('1'); // Set Stock quantity to "1"
+        $(a+'_low_stock_amount').val('0'); // Set Low stock threshold to "0"
+    });
+    </script>
+    <?php
+    endif;
+}
 // disable lazy load
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
