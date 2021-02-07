@@ -1,6 +1,6 @@
 <?php
 
-// stock message
+// display an 'Out of stock' label on product page
 add_filter('woocommerce_get_stock_html', 'change_stock_message', 10, 2);
 function change_stock_message($message, $stock_status) {
     if ($stock_status->get_stock_status() == "outofstock") {
@@ -95,6 +95,7 @@ function leto_child_remove_preloader() {
 }
 
 // add currencies into header
+add_action( 'leto_inside_header', 'leto_custom_navigation', 9 );
 function leto_custom_navigation() {
 	?>
 		<nav id="site-navigation" class="main-navigation">
@@ -173,4 +174,3 @@ function leto_custom_navigation() {
 
 	<?php
 }
-add_action( 'leto_inside_header', 'leto_custom_navigation', 9 );
