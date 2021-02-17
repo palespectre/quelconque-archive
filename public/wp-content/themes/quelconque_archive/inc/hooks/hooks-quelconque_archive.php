@@ -174,3 +174,33 @@ function leto_custom_navigation() {
 
 	<?php
 }
+
+// remove zoom on product page
+add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
+function bbloomer_remove_zoom_lightbox_theme_support() { 
+   remove_theme_support( 'wc-product-gallery-zoom' );
+   remove_theme_support( 'wc-product-gallery-lightbox' );
+   remove_theme_support( 'wc-product-gallery-slider' );
+}
+
+// remove add to cart button for every product
+add_action( 'init', 'prfx_remove_add_to_cart_button');
+function prfx_remove_add_to_cart_button() {
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10); // catalog page
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30); // single product page
+}
+
+// remove price from shop page
+add_filter( 'woocommerce_after_shop_loop_item_title', 'remove_woocommerce_loop_price', 2 );
+function remove_woocommerce_loop_price() {
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+}
+// remove price from product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+
+// prevent products from being purchased
+add_filter('woocommerce_is_purchasable', 'prfx_is_product_purchasbale');
+function prfx_is_product_purchasbale($purchasable) {
+    $purchasable = false;
+    return $purchasable;
+}
