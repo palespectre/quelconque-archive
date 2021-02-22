@@ -44,7 +44,6 @@
                 </div>
             </div>
         </header><!-- #masthead -->
-
         <?php do_action( 'leto_after_header' ); ?>
 
         <?php $container = leto_container_type(); ?>

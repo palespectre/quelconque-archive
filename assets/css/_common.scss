@@ -121,12 +121,14 @@ body.woocommerce-checkout .woocommerce form .form-row .required {
     }
 
     body.woocommerce.single-product {
-        .pswp {
-            display: none;
-        }
-
         #primary.content-area {
             width: 100%;
+
+            .woocommerce-product-gallery {
+                .slick-slide {
+                    pointer-events: none;
+                }
+            }
 
             .stock {
                 &.in-stock {
