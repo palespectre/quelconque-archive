@@ -21,6 +21,24 @@ header#masthead {
 	}
 }
 
+.mobile-menu {
+	padding: 2rem !important;
+
+	.mobile-menu__navigation {
+		margin-top: 10rem;
+		
+		ul {
+			li {
+				border-bottom: none;
+
+				a {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
 #content.site-content {
 	.page-header {
 		display: none;
