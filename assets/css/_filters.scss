@@ -20,6 +20,8 @@
 aside#secondary {
     background-color: white;
     padding-left: 0;
+    position: sticky;
+    top: 7rem;
 
     .berocket_single_filter_widget {
         cursor: pointer;
@@ -27,6 +29,7 @@ aside#secondary {
     
     h3 {
         font-size: 1.3rem;
+        padding-left: 15px;
     }
 
     .bapf_ckbox {

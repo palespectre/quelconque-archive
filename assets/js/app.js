@@ -57,6 +57,7 @@ const resizeImage = () => {
     picture.height = picture.clientHeight;
 }
 
+setTimeout(function(){ scroll.update(); }, 200);
 setTimeout(function(){ scroll.update(); }, 1000);
 setTimeout(function(){ scroll.update(); }, 4000);
 

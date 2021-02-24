@@ -198,12 +198,12 @@ function leto_custom_navigation() {
 }
 
 // remove zoom on product page
-add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
-function bbloomer_remove_zoom_lightbox_theme_support() { 
-   remove_theme_support( 'wc-product-gallery-zoom' );
-   remove_theme_support( 'wc-product-gallery-lightbox' );
-   remove_theme_support( 'wc-product-gallery-slider' );
-}
+// add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
+// function bbloomer_remove_zoom_lightbox_theme_support() { 
+//    remove_theme_support( 'wc-product-gallery-zoom' );
+//    remove_theme_support( 'wc-product-gallery-lightbox' );
+//    remove_theme_support( 'wc-product-gallery-slider' );
+// }
 
 // remove add to cart button for every product
 add_action( 'init', 'prfx_remove_add_to_cart_button');
