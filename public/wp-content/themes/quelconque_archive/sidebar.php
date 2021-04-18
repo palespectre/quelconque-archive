@@ -13,5 +13,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside data-scroll data-scroll-sticky data-scroll-target=".row" id="secondary" data-scroll-offset="-80" class="widget-area primary-sidebar col-md-3">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php
+		if (wp_is_mobile()) {
+			dynamic_sidebar( 'sidebar-2' );
+		} else {
+			dynamic_sidebar( 'sidebar-1' );
+		}
+	?>
 </aside><!-- #secondary -->

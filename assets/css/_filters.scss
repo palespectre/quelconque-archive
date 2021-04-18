@@ -19,9 +19,6 @@
 
 aside#secondary {
     background-color: white;
-    padding-left: 0;
-    position: sticky;
-    top: 7rem;
 
     .berocket_single_filter_widget {
         cursor: pointer;
@@ -29,7 +26,7 @@ aside#secondary {
     
     h3 {
         font-size: 1.3rem;
-        padding-left: 15px;
+        padding-left: 0;
     }
 
     .bapf_ckbox {
@@ -98,7 +95,11 @@ aside#secondary {
     }
 }
 @media only screen and (min-width:48em){
-
+    aside#secondary {
+        position: sticky;
+        top: 7rem;
+        width: auto;
+    }
 }
 @media only screen and (min-width:64em){
 
