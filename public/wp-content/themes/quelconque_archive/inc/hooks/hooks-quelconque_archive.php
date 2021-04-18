@@ -116,6 +116,33 @@ function leto_child_remove_preloader() {
   remove_action( 'leto_inside_header', 'leto_main_navigation', 9 );
 }
 
+// enable upload for webp image files
+function webp_upload_mimes($existing_mimes) {
+    $existing_mimes['webp'] = 'image/webp';
+    return $existing_mimes;
+}
+add_filter('mime_types', 'webp_upload_mimes');
+
+// enable preview / thumbnail for webp image files
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
+
+/*
 // add currencies into header
 add_action( 'leto_inside_header', 'leto_custom_navigation', 9 );
 function leto_custom_navigation() {
@@ -196,14 +223,7 @@ function leto_custom_navigation() {
 
 	<?php
 }
-
-// remove zoom on product page
-// add_action( 'wp', 'bbloomer_remove_zoom_lightbox_theme_support', 99 );
-// function bbloomer_remove_zoom_lightbox_theme_support() { 
-//    remove_theme_support( 'wc-product-gallery-zoom' );
-//    remove_theme_support( 'wc-product-gallery-lightbox' );
-//    remove_theme_support( 'wc-product-gallery-slider' );
-// }
+*/
 
 // remove add to cart button for every product
 add_action( 'init', 'prfx_remove_add_to_cart_button');
@@ -226,3 +246,79 @@ function prfx_is_product_purchasbale($purchasable) {
     $purchasable = false;
     return $purchasable;
 }
+
+// add sidebar for mobile
+register_sidebar( array(
+	'name'          => esc_html__( 'Sidebar mobile', 'leto' ),
+	'id'            => 'sidebar-2',
+	'description'   => esc_html__( 'Add widgets here.', 'leto' ),
+	'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</section>',
+	'before_title'  => '<h3 class="widget-title">',
+	'after_title'   => '</h3>',
+) );
+
+// image on front page hero
+function frontpage_hero() {
+	global $is_safari;
+
+	if ( !is_front_page() ) {
+		return;
+	}
+
+	echo '<div class="hero-area">';
+	if (wp_is_mobile()) {
+		echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collage1.jpg">';
+	} else {
+		if ($is_safari) {
+			echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collages.jpg">';
+		} else {
+			echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collages.webp">';
+		}
+	}
+	echo '</div>';
+}
+
+function leto_hero_slider_child() {
+	remove_action('leto_after_header', 'leto_hero_slider');
+	add_action('leto_after_header', 'frontpage_hero');
+}
+add_action('wp_loaded', 'leto_hero_slider_child');
+
+// change logo on login page
+function wpm_login_style() { ?>
+    <style type="text/css">
+		body.login {
+			background: white;
+		}
+        #login h1 a, .login h1 a {
+            background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.jpg");
+        }
+		
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'wpm_login_style' );
+
+// hide menu items
+function my_remove_menu_pages() {
+  global $user_ID;
+
+  if ( $user_ID != 1 ) { //your user id
+
+   remove_menu_page('edit.php'); // Posts
+   remove_menu_page('upload.php'); // Media
+   remove_menu_page('link-manager.php'); // Links
+   remove_menu_page('edit-comments.php'); // Comments
+   remove_menu_page('edit.php?post_type=page'); // Pages
+   remove_menu_page('plugins.php'); // Plugins
+   remove_menu_page('themes.php'); // Appearance
+   remove_menu_page('users.php'); // Users
+   remove_menu_page('tools.php'); // Tools
+   remove_menu_page('options-general.php'); // Settings
+   remove_menu_page('edit.php'); // Posts
+   remove_menu_page('upload.php'); // Media
+   remove_menu_page('woocommerce-marketing'); // Marketing
+   remove_menu_page('wc-admin&path=/analytics/overview'); // Analytics
+  }
+}
+add_action( 'admin_init', 'my_remove_menu_pages' );

@@ -1,6 +1,11 @@
 header#masthead {
+	position: relative;
 	background-color: white;
 	z-index: 1;
+
+	.header-navigation.header-floating.floating {
+		transition: none;
+	}
 
 	.nav-link-account, .nav-link-search, .nav-link-cart, .site-branding__content {
 		display: none;
@@ -8,9 +13,14 @@ header#masthead {
 
 	.site-header__content {
 		.site-branding {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
+			.custom-logo-link {
+				position: relative;
+				margin: auto;
+
+				img {
+					margin-right: 0;
+				}
+			}
 		}
 	}
 	
@@ -74,11 +84,23 @@ header#masthead {
 		}
 	}
 }
+
 @media only screen and (min-width:36em){
 
 }
 @media only screen and (min-width:48em){
+	header#masthead {
+		.site-header__content {
+			.site-branding {
+				position: relative;
+				margin: auto;
 
+				img {
+					max-width: 17rem;
+				}
+			}
+		}
+	}
 }
 @media only screen and (min-width:64em){
 

@@ -1,0 +1,81 @@
+.woocommerce {
+    #page {
+        overflow: visible;
+        transition: opacity 0s;
+        
+        &.fade {
+            opacity: 0.1;
+
+            & > div {
+                pointer-events: none !important;
+            }
+        }
+    }
+
+    a.wqoecf_enquiry_button {
+        margin-top: 1rem;
+        font-weight: normal !important;
+
+        &:before {
+            display: none;
+        }
+    
+        &:hover {
+            text-decoration: none;
+            background-color: rgb(51, 51, 51);
+        }
+    }
+
+    .wqoecf-pop-up-box {
+        background-color: black;
+        box-shadow: none;
+        width: 90%;
+        max-width: 50rem;
+        border-radius: 3px;
+
+        .screen-reader-response {
+            display: none;
+        }
+
+        .wpcf7-form {
+            height: auto;
+
+            p {
+                label {
+                    width: 100%;
+                    color: #e0e0e0;
+                    margin-bottom: 4rem;
+
+                    span {
+                        color: white;
+
+                        &.wpcf7-not-valid-tip {
+                            color: red;
+                        }
+                    }
+    
+                    input, textarea {
+                        background-color: black;
+                        color: white;
+                        font-size: 18px;
+                        height: 4rem;
+                    }
+                }
+                
+                input[type="submit"] {
+                    text-transform: initial;
+                    background-color: white !important;
+                    color: black !important;
+                    font-size: 14px;
+                    height: auto;
+                    padding: 1rem 2rem;
+                }
+            }
+
+            .wpcf7-response-output {
+                margin-top: 1rem;
+                color: white;
+            }
+        }
+    }
+}
