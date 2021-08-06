@@ -1,11 +1,9 @@
 .woocommerce {
     #page {
         overflow: visible;
-        transition: opacity 0s;
+        transition: opacity 0.3s ease;
         
         &.fade {
-            opacity: 0.1;
-
             & > div {
                 pointer-events: none !important;
             }
@@ -15,6 +13,7 @@
     a.wqoecf_enquiry_button {
         margin-top: 1rem;
         font-weight: normal !important;
+        border-radius: 0 !important;
 
         &:before {
             display: none;
@@ -27,14 +26,25 @@
     }
 
     .wqoecf-pop-up-box {
-        background-color: black;
         box-shadow: none;
         width: 90%;
-        max-width: 50rem;
+        max-width: 70rem;
         border-radius: 3px;
 
         .screen-reader-response {
             display: none;
+        }
+
+        .wqoecf_close {
+            top: 0;
+        }
+
+        .wqoecf_form_title {
+            display: none;
+        }
+
+        & > .wpcf7 {
+            padding: 4rem 0rem;
         }
 
         .wpcf7-form {
@@ -43,20 +53,16 @@
             p {
                 label {
                     width: 100%;
-                    color: #e0e0e0;
-                    margin-bottom: 4rem;
+                    color: #8d8d8d;
+                    margin-bottom: 3rem;
 
                     span {
-                        color: white;
-
                         &.wpcf7-not-valid-tip {
                             color: red;
                         }
                     }
     
                     input, textarea {
-                        background-color: black;
-                        color: white;
                         font-size: 18px;
                         height: 4rem;
                     }
@@ -64,8 +70,7 @@
                 
                 input[type="submit"] {
                     text-transform: initial;
-                    background-color: white !important;
-                    color: black !important;
+                    background-color: black !important;
                     font-size: 14px;
                     height: auto;
                     padding: 1rem 2rem;

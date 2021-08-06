@@ -102,8 +102,6 @@ body.woocommerce-checkout .woocommerce form .form-row .required {
 }
 
 .woocommerce-loop-product__link {
-    text-decoration: underline;
-    text-decoration-color: transparent;
     transition: text-decoration-color .3s ease-in-out;
 
     h2.woocommerce-loop-product__title {
@@ -113,6 +111,7 @@ body.woocommerce-checkout .woocommerce form .form-row .required {
     }
 
     &:hover {
+        text-decoration: none;
         text-decoration-color: black;
         
         h2.woocommerce-loop-product__title {

@@ -1,6 +1,5 @@
 import css from '../css/app.scss';
 import LocomotiveScroll from 'locomotive-scroll';
-import insertionQ from 'insertion-query';
 
 const header = document.querySelector('header#masthead');
 
@@ -63,14 +62,18 @@ setTimeout(function(){ scroll.update(); }, 4000);
 
 // fade page when user clicks on "ask for price" button
 const pageContainer = document.querySelector('.woocommerce #page');
-insertionQ('.wqoecf-pop-up-box').every(function(element){
-    const closeForm = document.querySelector('.wqoecf_close');
-	pageContainer.classList.add('fade');
-    
-    if (closeForm) {
-        closeForm.addEventListener('click', function() {
-            pageContainer.classList.remove('fade');
-        })
-    }
-});
+const askForPriceBtn = document.querySelector('.wqoecf_enquiry_button');
+const closeFormBtn = document.querySelector('.wqoecf_close');
+
+if (askForPriceBtn) {
+    askForPriceBtn.addEventListener('click', function() {
+        pageContainer.classList.add('fade');
+    });
+};
+
+if (closeFormBtn) {
+    closeFormBtn.addEventListener('click', function() {
+        pageContainer.classList.remove('fade');
+    });
+};
 
