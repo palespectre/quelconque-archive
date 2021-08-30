@@ -63,17 +63,38 @@ setTimeout(function(){ scroll.update(); }, 4000);
 // fade page when user clicks on "ask for price" button
 const pageContainer = document.querySelector('.woocommerce #page');
 const askForPriceBtn = document.querySelector('.wqoecf_enquiry_button');
+const formWrapper = document.querySelector('.wqoecf-pop-up-box');
 const closeFormBtn = document.querySelector('.wqoecf_close');
 
 if (askForPriceBtn) {
     askForPriceBtn.addEventListener('click', function() {
         pageContainer.classList.add('fade');
+        formWrapper.classList.add('show');
     });
 };
 
 if (closeFormBtn) {
     closeFormBtn.addEventListener('click', function() {
         pageContainer.classList.remove('fade');
+        formWrapper.classList.remove('show');
     });
 };
 
+// remove fade class after form submission
+const contactFormWrapper = document.querySelector( '.wpcf7' );
+const contactForm = document.querySelector('.wpcf7-form');
+if (contactFormWrapper) {
+    contactFormWrapper.addEventListener( 'wpcf7mailsent', function( event ) {
+        pageContainer.classList.remove('fade');
+        formWrapper.classList.remove('show');
+    }, false );
+    
+    // disable double submission
+    contactForm.addEventListener('submit', function() {
+        contactForm.querySelector('.wpcf7-submit').setAttribute('disabled', true);
+
+        contactFormWrapper.addEventListener('wpcf7submit', function(e) {
+            contactFormWrapper.querySelector('.wpcf7-submit').removeAttribute('disabled');
+        })
+    });
+}
