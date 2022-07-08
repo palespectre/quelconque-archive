@@ -123,6 +123,13 @@ function webp_upload_mimes($existing_mimes) {
 }
 add_filter('mime_types', 'webp_upload_mimes');
 
+// dequeue cf7 enquiry stylesheet
+function dequeue_plugin_style() {
+    wp_dequeue_style( 'wqoecf-front-style.css' );
+	wp_dequeue_script( 'wqoecf-front-script' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_plugin_style', 100 );
+
 // enable preview / thumbnail for webp image files
 function webp_is_displayable($result, $path) {
     if ($result === false) {
@@ -268,7 +275,7 @@ function frontpage_hero() {
 
 	echo '<div class="hero-area">';
 	if (wp_is_mobile()) {
-		echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collage1.jpg">';
+		echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collage.jpg">';
 	} else {
 		if ($is_safari) {
 			echo '<img src="' . get_stylesheet_directory_uri().'/assets/img/collages.jpg">';
@@ -292,7 +299,7 @@ function wpm_login_style() { ?>
 			background: white;
 		}
         #login h1 a, .login h1 a {
-            background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.jpg");
+            background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.svg");
         }
 		
     </style>
@@ -322,3 +329,19 @@ function my_remove_menu_pages() {
   }
 }
 add_action( 'admin_init', 'my_remove_menu_pages' );
+
+add_action("wp_footer","add_ask_for_price_form");
+function add_ask_for_price_form()
+{
+	?>
+	<div class="wqoecf-pop-up-box">
+		<button class="wqoecf_close"><?php echo dh_include_svg_from_uri(get_theme_file_path().'/assets/img/cross.svg'); ?></button>
+		<div>
+			<!-- local id -->
+			<!-- <?php echo do_shortcode('[contact-form-7 id="239" title="Ask for price"]'); ?> -->
+			<?php echo do_shortcode('[contact-form-7 id="34" title="Ask for price"]'); ?>
+		</div>
+	</div>
+
+	<?php
+}

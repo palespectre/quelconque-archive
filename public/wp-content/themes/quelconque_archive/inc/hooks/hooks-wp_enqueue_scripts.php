@@ -10,6 +10,7 @@ function scripts() {
 	wp_enqueue_style( 'dh-main', get_stylesheet_directory_uri().'/assets/css/main.css');
 	wp_enqueue_style( 'leto-parent-style', get_template_directory_uri() . '/style.css' );
 	
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Rubik&display=swap"');
 	if(file_exists(get_stylesheet_directory().'/assets/css/large-mobile.css'))
 		wp_enqueue_style( 'dh-large-mobile', get_stylesheet_directory_uri().'/assets/css/large-mobile.css', 'dh-main', '1.0', 'screen and (min-width: 36em)');
 	if(file_exists(get_stylesheet_directory().'/assets/css/tablet.css'))
