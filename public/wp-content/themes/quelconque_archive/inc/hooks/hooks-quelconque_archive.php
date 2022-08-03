@@ -345,3 +345,19 @@ function add_ask_for_price_form()
 
 	<?php
 }
+
+// add GTAG script
+function prefix_footer_code() {
+	?>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-82MY1QFFMT"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-82MY1QFFMT');
+		</script>
+	<?php
+}
+add_action( 'wp_footer', 'prefix_footer_code' );
